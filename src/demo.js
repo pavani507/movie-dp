@@ -11,6 +11,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { API_KEY } from "./keys";
 
 function TabContainer(props) {
   return (
@@ -46,7 +47,7 @@ class MovieDB extends React.Component {
     const apiQuery = value === 0 ? "popular" : "top_rated";
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${apiQuery}?api_key=641b438ab7611698d018dee2d1464d56&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/${apiQuery}?api_key=${API_KEY}&language=en-US&page=1`
       )
       .then(res => {
         this.mounted = true;

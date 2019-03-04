@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
+import { API_KEY } from "./keys";
 
 class movieDetails extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class movieDetails extends React.Component {
     if (!id) return;
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=641b438ab7611698d018dee2d1464d56&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
       )
       .then(res => {
         this.mounted = true;
